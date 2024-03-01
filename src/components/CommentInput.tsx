@@ -12,6 +12,9 @@ const CommentInput: FC<Props> = ({ forumPost, setForumPost }) => {
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault();
 
+    // TODO: Use setForumPost() to update the original forumPost with
+    // the new comment
+
     setForumPost({
       ...forumPost,
       comments: [
@@ -23,6 +26,7 @@ const CommentInput: FC<Props> = ({ forumPost, setForumPost }) => {
         },
       ],
     });
+
     setCommentBody("");
   };
 
