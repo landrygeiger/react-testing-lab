@@ -3,6 +3,7 @@ import { ForumPost } from "../types";
 import MetadataView from "./MetadataView";
 import LikeButton from "./LikeButton";
 import CommentList from "./CommentList";
+import CommentInput from "./CommentInput";
 
 type Props = {
   forumPost: ForumPost;
@@ -16,6 +17,8 @@ const ForumPostView: FC<Props> = ({ forumPost, setForumPost }) => {
       <MetadataView metadata={forumPost} />
       <p>{forumPost.body}</p>
       <LikeButton forumPost={forumPost} setForumPost={setForumPost} />
+      <CommentInput forumPost={forumPost} setForumPost={setForumPost} />
+      <h2>Comments</h2>
       <CommentList comments={forumPost.comments} />
     </>
   );
