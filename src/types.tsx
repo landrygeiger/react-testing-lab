@@ -7,12 +7,14 @@ export type ForumPost = {
   };
   postedAt: Date;
   likes: number;
-  comments: {
-    author: {
-      firstName: string;
-      lastName: string;
-    };
-    body: string;
-    likes: number;
-  }[];
+  comments: Comment[];
+};
+
+export type Comment = {
+  author: {
+    firstName: string;
+    lastName: string;
+  };
+  body: string;
+  postedAt: Date;
 };

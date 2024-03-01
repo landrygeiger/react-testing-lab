@@ -18,7 +18,7 @@ const myForumPost: ForumPost = {
         firstName: "Zach",
         lastName: "Wallenburg",
       },
-      likes: 12,
+      postedAt: new Date(),
     },
     {
       body: "Yeah that post was really cool.",
@@ -26,7 +26,7 @@ const myForumPost: ForumPost = {
         firstName: "John",
         lastName: "Post",
       },
-      likes: 7,
+      postedAt: new Date(),
     },
   ],
 };
