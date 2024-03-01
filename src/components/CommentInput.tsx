@@ -15,6 +15,9 @@ const CommentInput: FC<Props> = ({ forumPost, setForumPost }) => {
     // TODO: Use setForumPost() to update the original forumPost with
     // the new comment
 
+    // const newForumPost: ForumPost = {};
+    // setForumPost(newForumPost);
+
     setForumPost({
       ...forumPost,
       comments: [
