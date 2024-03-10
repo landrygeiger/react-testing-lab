@@ -5,7 +5,7 @@ const config: Config.InitialOptions = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  testMatch: ["**/test/**/*.test.ts"],
+  testMatch: ["**/*.test.ts"],
   maxWorkers: 1,
 };
 
