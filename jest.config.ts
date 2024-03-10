@@ -5,8 +5,9 @@ const config: Config.InitialOptions = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  testMatch: ["**/*.test.ts"],
+  testMatch: ["**/*.test.tsx","**/*.test.ts"],
   maxWorkers: 1,
+  testEnvironment: "jsdom"
 };
 
 export default config;
