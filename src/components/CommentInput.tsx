@@ -39,7 +39,7 @@ const CommentInput: FC<Props> = ({ forumPost, setForumPost }) => {
 
   return (
     <form onSubmit={handleSubmit} style={{ display: "flex", gap: "1rem" }}>
-      <input type="text" value={commentBody} onChange={handleChange} required />
+      <input type="text" aria-label= "Comment Input" value={commentBody} onChange={handleChange} required />
       <button type="submit" disabled={commentBody.length === 0}>
         Comment
       </button>

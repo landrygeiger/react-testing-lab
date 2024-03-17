@@ -65,4 +65,21 @@ describe("In my web forum", () => {
     
   })
 
+  it("the Comment button should be disabled on load", async ()=>{
+    render(<App />)
+
+    expect(screen.getByText('Comment')).toBeDisabled();
+    
+  })
+
+  it("the Comment button should be enabled once text has been input", async ()=>{
+    render(<App />)
+
+    expect(screen.getByText('Comment')).toBeDisabled();
+    const input = screen.getByLabelText('Comment Input')
+    await userEvent.type(input, "Test Comment");
+    expect(screen.getByText('Comment')).toBeEnabled();
+    
+  })
+
 });
