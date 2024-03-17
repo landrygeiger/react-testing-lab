@@ -72,13 +72,39 @@ describe("In my web forum", () => {
     
   })
 
-  it("the Comment button should be enabled once text has been input", async ()=>{
+  it("the Comment button should be enabled once text has been input but not submitted", async ()=>{
     render(<App />)
 
-    expect(screen.getByText('Comment')).toBeDisabled();
+    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
     const input = screen.getByLabelText('Comment Input')
-    await userEvent.type(input, "Test Comment");
-    expect(screen.getByText('Comment')).toBeEnabled();
+    await userEvent.type(input, "Test String");
+    expect(screen.getByLabelText('Submit Comment')).toBeEnabled();
+    
+  })
+
+  it("the Comment button should be disabled once text has been input and submitted", async ()=>{
+    render(<App />)
+
+    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
+    const input = screen.getByLabelText('Comment Input')
+    await userEvent.type(input, "Test String");
+    expect(screen.getByLabelText('Submit Comment')).toBeEnabled();
+
+    await userEvent.click(screen.getByLabelText('Submit Comment'))
+    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
+    
+  })
+
+  it("a submitted comment should appear in the list of comments below the post", async ()=>{
+    render(<App />)
+
+    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
+    const input = screen.getByLabelText('Comment Input')
+    await userEvent.type(input, "Test String");
+    expect(screen.getByLabelText('Submit Comment')).toBeEnabled();
+
+    await userEvent.click(screen.getByLabelText('Submit Comment'))
+    expect(screen.getAllByLabelText('User Comment').includes(screen.getByText('Test String'))).toBeTruthy()
     
   })
 

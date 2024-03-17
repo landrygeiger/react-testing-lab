@@ -10,7 +10,7 @@ const CommentView: FC<Props> = ({ comment }) => {
   return (
     <>
       <MetadataView metadata={comment} />
-      <p>{comment.body}</p>
+      <p aria-label="User Comment">{comment.body}</p>
     </>
   );
 };
