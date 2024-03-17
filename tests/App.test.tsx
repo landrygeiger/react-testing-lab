@@ -113,7 +113,7 @@ describe("In my web forum", () => {
     const post = screen.getByLabelText("Forum Post Content")
 
     const textColor = window.getComputedStyle(post).getPropertyValue("color")
-    expect(textColor).toBe("black")
+    expect(textColor).toEqual("black")
     
     
   })
@@ -124,7 +124,7 @@ describe("In my web forum", () => {
     const post = screen.getByLabelText("Forum Post Content")
     await userEvent.click(blueModeToggle)
     const textColor = window.getComputedStyle(post).getPropertyValue("color")
-    expect(textColor).toBe("blue")
+    expect(textColor).toEqual("blue")
     
     
   })
@@ -137,12 +137,12 @@ describe("In my web forum", () => {
     await userEvent.click(blueModeToggle)
 
     const textColor = window.getComputedStyle(post).getPropertyValue("color")
-    expect(textColor).toBe("blue")
+    expect(textColor).toEqual("blue")
 
     await userEvent.click(blueModeToggle)
     
     const updatedTextColor = window.getComputedStyle(post).getPropertyValue("color")
-    expect(updatedTextColor).toBe("black")
+    expect(updatedTextColor).toEqual("black")
     
   })
 
