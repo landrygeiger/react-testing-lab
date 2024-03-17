@@ -13,7 +13,7 @@ Once you have done this, run `npm run test` to run the suite of jest tests. Noti
 
 ## Writing Front-End Tests
 
-Following the provided examples, finish the suite of unit tests so that all 10 provided tests pass.
+Following the provided examples, finish the suite of unit tests so that all 10 provided tests pass. Use [this Cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet/) to help you get a handle of React Testing Library and its features. **Notice we are using `UserEvent` instead of `FireEvent`. For our purposes, these can be used interchangably, but if you want to know more about why UserEvent is actually better for this type of testing you can read up on it [here](https://testing-library.com/docs/user-event/intro).
 
 ## Adding Your Own Component
 
