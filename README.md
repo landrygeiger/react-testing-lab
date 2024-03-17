@@ -4,3 +4,19 @@ In this lab, you will write a series of user-oriented front end tests to simulat
 
 
 ## Getting Started
+
+Make sure you have Node and Node Package Manager (npm) installed. If you are unsure, run `npm -v` and it should give you a version number. If you do not, go ahead and follow [this guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to get it installed.
+
+Once you have npm installed, cd into the project directory and run `npm install` followed by `npm run dev`. It should give you a path to the localhost port where your app is being run. You can access it by copy and pasting it into a browser or Ctrl + Click (Cmd + Click for MacOS) the link. If everything is working correctly, you should see a very simple unstyled forum app. Spend 1-2 minutes interacting with the app and understanding how it might be used.
+
+Once you have done this, run `npm run test` to run the suite of jest tests. Notice most of these tests fail because they have not yet been implemented.
+
+## Writing Front-End Tests
+
+Following the provided examples, finish the suite of unit tests so that all 10 provided tests pass.
+
+## Adding Your Own Component
+
+Once all of your unit tests pass, its time to add your own component to the project and write a few unit tests to support it. Consider adding a button, checkbox, or other input type that when interacted with, changes some part of the frontend. (See 'Blue Mode' as an example.) Then, write 2-3 unit tests to validate that your new element works as expected. Be creative and have some fun with it!
+
+When you are done, you should have *AT LEAST 12 passing unit tests* and some new element that modifies the user experience in some way.
