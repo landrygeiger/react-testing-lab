@@ -19,7 +19,7 @@ const ForumPostView: FC<Props> = ({ forumPost, setForumPost }) => {
       <h1>{forumPost.title}</h1>
       <MetadataView metadata={forumPost} />
       <BlueModeInput isBlue={isBlue} setIsBlue={setIsBlue} />
-      <p style={{ color: isBlue ? "blue" : "black" }}>{forumPost.body}</p>
+      <p aria-label= "Forum Post Content" style={{ color: isBlue ? "blue" : "black" }}>{forumPost.body}</p>
       <LikeButton forumPost={forumPost} setForumPost={setForumPost} />
       <CommentInput forumPost={forumPost} setForumPost={setForumPost} />
       <h2>Comments</h2>

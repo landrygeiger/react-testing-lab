@@ -108,4 +108,42 @@ describe("In my web forum", () => {
     
   })
 
+  it("a forum post's text should be black on load", async ()=>{
+    render(<App />)
+    const post = screen.getByLabelText("Forum Post Content")
+
+    const textColor = window.getComputedStyle(post).getPropertyValue("color")
+    expect(textColor).toBe("black")
+    
+    
+  })
+
+  it("a forumn post's text should be blue after clicking blue mode toggle", async ()=>{
+    render(<App />)
+    const blueModeToggle = screen.getByLabelText("Blue Mode Toggle")
+    const post = screen.getByLabelText("Forum Post Content")
+    await userEvent.click(blueModeToggle)
+    const textColor = window.getComputedStyle(post).getPropertyValue("color")
+    expect(textColor).toBe("blue")
+    
+    
+  })
+
+  it("a forumn post's text should be black after clicking blue mode toggle twice", async ()=>{
+    render(<App />)
+    const blueModeToggle = screen.getByLabelText("Blue Mode Toggle")
+    const post = screen.getByLabelText("Forum Post Content")
+
+    await userEvent.click(blueModeToggle)
+
+    const textColor = window.getComputedStyle(post).getPropertyValue("color")
+    expect(textColor).toBe("blue")
+
+    await userEvent.click(blueModeToggle)
+    
+    const updatedTextColor = window.getComputedStyle(post).getPropertyValue("color")
+    expect(updatedTextColor).toBe("black")
+    
+  })
+
 });

@@ -13,7 +13,7 @@ const BlueModeInput: FC<Props> = ({ isBlue, setIsBlue }) => {
   return (
     <>
       <label>
-        <input type="checkbox" checked={isBlue} onChange={handleClick} />
+        <input type="checkbox"  aria-label="Blue Mode Toggle" checked={isBlue} onChange={handleClick} />
         Blue Mode™
       </label>
     </>
