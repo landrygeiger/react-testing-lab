@@ -69,7 +69,7 @@ describe("In my web forum", () => {
   it("the Comment button should be disabled on load", async ()=>{
     render(<App />);
 
-    expect(screen.getByText('Comment')).toBeDisabled();
+    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
     
   })
 
