@@ -82,13 +82,13 @@ describe("In my web forum", () => {
     
   })
 
-  it("a forumn post's text should be blue after clicking blue mode toggle", async ()=>{
+  it("a forum post's text should be blue after clicking blue mode toggle", async ()=>{
     //TODO: complete unit test (hint: you can use getByLabelText to isolate the blue mode checkbox)
     throw new Error('Test Not Yet Implemented')
     
   })
 
-  it("a forumn post's text should be black after clicking blue mode toggle twice (toggling and then untoggling)", async ()=>{
+  it("a forum post's text should be black after clicking blue mode toggle twice (toggling and then untoggling)", async ()=>{
     //TODO: complete unit test
     throw new Error('Test Not Yet Implemented')
   })
