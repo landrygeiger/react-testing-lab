@@ -43,78 +43,38 @@ describe("In my web forum", () => {
   })
 
   it("the unlike button should decrement number of likes after clicking", async ()=>{
-    render(<App />);
-
-    
-    const likesRegex = /^\d+ Likes$/;
-    
-    //click the button to add a like
-    await userEvent.click(screen.getByText('Like'));
-
-    expect(screen.queryByText('Like')).toBeFalsy();
-    expect(screen.getByText('Unlike')).toBeInTheDocument();
-
-    const originalNumberOfLikes:number = parseInt(screen.getByText(likesRegex).textContent!.split(" ")[0]);
-
-    //click the button again to remove the like
-    await userEvent.click(screen.getByText('Unlike'));
-
-    const updatedNumberOfLikes:number = parseInt(screen.getByText(likesRegex).textContent!.split(" ")[0]);
-
-    
-    expect(updatedNumberOfLikes).toEqual(originalNumberOfLikes - 1);
-    
+    //TODO: complete unit test
+    fail()
   })
 
   it("the Comment button should be disabled on load", async ()=>{
     render(<App />);
 
-    expect(screen.getByText('Comment')).toBeDisabled();
+    //HELPFUL NOTE: Aria-labels are a great replacement for "test-ids" because they accomplish the same goal (A unique component identifier) while providing value to users with screen-readers.
+    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
     
   })
 
   it("the Comment button should be enabled once text has been input but not submitted", async ()=>{
-    render(<App />);
-
-    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
-    const input = screen.getByLabelText('Comment Input');
-
-    await userEvent.type(input, "Test String");
-
-    expect(screen.getByLabelText('Submit Comment')).toBeEnabled();
+    //TODO: complete unit test (hint: use the userEvent.type method to simulate user keyboard entry! )
     
   })
 
   it("the Comment button should be disabled once text has been input and submitted", async ()=>{
-    render(<App />);
 
-    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
-    const input = screen.getByLabelText('Comment Input');
-    await userEvent.type(input, "Test String");
-    expect(screen.getByLabelText('Submit Comment')).toBeEnabled();
-
-    await userEvent.click(screen.getByLabelText('Submit Comment'));
-    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
+    //TODO: complete unit test
     
   })
 
   it("a submitted comment should appear in the list of comments below the post", async ()=>{
-    render(<App />);
-
-    expect(screen.getByLabelText('Submit Comment')).toBeDisabled();
-    const input = screen.getByLabelText('Comment Input');
-    await userEvent.type(input, "Test String");
-    expect(screen.getByLabelText('Submit Comment')).toBeEnabled();
-
-    await userEvent.click(screen.getByLabelText('Submit Comment'));
-    expect(screen.getAllByLabelText('User Comment').includes(screen.getByText('Test String'))).toBeTruthy();
+    //TODO: complete unit test (hint: use screen.getAllByLabelText('User Comment') to get a list of HTMLElements representing the comments below a post)
     
   })
 
   it("a forum post's text should be black on load", async ()=>{
     render(<App />);
     const post = screen.getByLabelText("Forum Post Content");
-
+    //HELPFUL NOTE: You can use the built-in window.getComputedStyle to generate a special JSON object that details a component's css
     const textColor = window.getComputedStyle(post).getPropertyValue("color");
     expect(textColor).toEqual("black");
     
@@ -122,30 +82,13 @@ describe("In my web forum", () => {
   })
 
   it("a forumn post's text should be blue after clicking blue mode toggle", async ()=>{
-    render(<App />);
-    const blueModeToggle = screen.getByLabelText("Blue Mode Toggle");
-    const post = screen.getByLabelText("Forum Post Content");
-    await userEvent.click(blueModeToggle);
-    const textColor = window.getComputedStyle(post).getPropertyValue("color");
-    expect(textColor).toEqual("blue");
+    //TODO: complete unit test (hint: you can use getByLabelText to isolate the blue mode checkbox)
     
     
   })
 
   it("a forumn post's text should be black after clicking blue mode toggle twice", async ()=>{
-    render(<App />);
-    const blueModeToggle = screen.getByLabelText("Blue Mode Toggle");
-    const post = screen.getByLabelText("Forum Post Content");
-
-    await userEvent.click(blueModeToggle);
-
-    const textColor = window.getComputedStyle(post).getPropertyValue("color");
-    expect(textColor).toEqual("blue");
-
-    await userEvent.click(blueModeToggle);
-    
-    const updatedTextColor = window.getComputedStyle(post).getPropertyValue("color");
-    expect(updatedTextColor).toEqual("black");
+    //TODO: complete unit test
     
   })
 
